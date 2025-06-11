@@ -7,7 +7,7 @@ import Pagination from '../Pagination/Pagination';
 import NoteModal from '../NoteModal/NoteModal';
 import SearchBox from '../SearchBox/SearchBox';
 import { useDebounce } from 'use-debounce';
-import { BarLoader } from 'react-spinners';
+import  Loader from '../Loader/Loader';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 export default function App() {
@@ -57,14 +57,7 @@ export default function App() {
 			{isError && <ErrorMessage />}
 			{isModalOpen && <NoteModal onClose={() => setIsOpenModal(false)} />}
 			{isPending && (
-				<BarLoader
-					cssOverride={{
-						display: 'block',
-						margin: '0 auto',
-						backgroundColor: 'red',
-						width: '500px',
-					}}
-				/>
+				<Loader />
 			)}
 		</div>
 	);
